@@ -1,0 +1,6 @@
+CONFIG += c++11
+
+SOURCES += \
+    main.cpp
+
+QMAKE_CXXFLAGS_RELEASE += -O3 -g -DNDEBUG
