@@ -79,6 +79,7 @@ public:
 private:
     ssize_t BinarySearch(ssize_t left, ssize_t right, T key) const
     {
+        /*
         size_t __len = right-left;
         size_t __first = left;
 
@@ -99,8 +100,8 @@ private:
         }
 
         return __first;
+        */
 
-        /*
         while (left < right)
         {
             const auto mid = left+((right-left)>>1); // avoids overflow
@@ -109,13 +110,11 @@ private:
 
             // no early exit so that always the occurence
             // of the key with the lowest index is found
-
             if (valMid < key)
                 left = mid+1;
             else
                 right = mid;
         }
-        */
 
         assert(left == right);
         return (Vals[left] == key ? left : -1);
